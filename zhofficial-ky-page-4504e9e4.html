@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 知识库介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f8f9fc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(135deg, #0c1a2b 0%, #1a2e44 100%);
+            color: #e9edf2;
+            padding: 3.5rem 1.5rem 2.8rem;
+            text-align: center;
+            border-bottom: 1px solid #2b3e55;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #b3c2d6;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* 正文容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* 引言 / 说明区 */
+        .intro-box {
+            background-color: #ffffff;
+            border-radius: 14px;
+            padding: 2rem 2rem 1.8rem;
+            margin-bottom: 2.4rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border-left: 4px solid #1e3a5f;
+        }
+
+        .intro-box p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 链接强调色 */
+        a {
+            color: #1d4f8a;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        a:hover {
+            color: #0b3b6b;
+            border-bottom-color: #0b3b6b;
+        }
+
+        /* 目录感布局 —— 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 1.6rem;
+            margin: 2.4rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.6rem 1.5rem 1.4rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border-top: 3px solid transparent;
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .card:nth-child(1) { border-top-color: #2c5282; }
+        .card:nth-child(2) { border-top-color: #3b7a5e; }
+        .card:nth-child(3) { border-top-color: #8b5a2b; }
+        .card:nth-child(4) { border-top-color: #4a5d73; }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1a2c42;
+        }
+
+        .card p {
+            font-size: 0.94rem;
+            color: #334155;
+            margin-bottom: 0;
+        }
+
+        .card .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: #eef2f7;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            margin-top: 0.7rem;
+            color: #2d4a6e;
+        }
+
+        /* 提示区 */
+        .tip-box {
+            background: #ecf3fa;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0 2.2rem;
+            border-left: 4px solid #2c5282;
+        }
+
+        .tip-box p {
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .tip-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .tip-box strong {
+            color: #1e3a5f;
+        }
+
+        /* 相关信息区 —— FAQ 摘要风格 */
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.8rem 2rem 1.6rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            margin: 2rem 0;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #1a2c42;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            font-size: 0.94rem;
+            color: #475569;
+        }
+
+        .faq-a a {
+            font-weight: 500;
+        }
+
+        /* 引用 / 延伸 */
+        .ref-note {
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            background: #f1f5f9;
+            border-radius: 12px;
+            padding: 1.2rem 1.8rem;
+            color: #2c3e50;
+            border: 1px solid #dee6ef;
+        }
+
+        .ref-note a {
+            font-weight: 500;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 2.5rem 1.2rem 2rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .faq-mini, .tip-box, .intro-box {
+                padding: 1.2rem 1.2rem;
+            }
+
+            .faq-mini h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>开云 · 知识速查</h1>
+    <div class="sub">日常查询 · 对照阅读 · 延伸参考</div>
+</section>
+
+<div class="container">
+
+    <!-- 说明区 -->
+    <div class="intro-box">
+        <p>无论是回溯基础概念，还是核对细节参考，这里更像一处信息汇集站。<strong>开云</strong>作为本页的核心关联对象，其相关条目、背景脉络与常见问题都可以快速查阅。以下内容从日常使用角度组织，供对照与延伸。</p>
+        <p>如果你需要直接浏览关于 <a href="https://zhofficial-ky.com">开云</a> 的完整信息，可以前往其主站页面，那里收录了更系统的说明与更新。</p>
+    </div>
+
+    <!-- 卡片式目录块（知识库入口感） -->
+    <div class="card-grid">
+        <div class="card">
+            <h3>基础档案</h3>
+            <p>涵盖关键定义、词源背景及发展脉络。适合初次接触或需要快速回顾。</p>
+            <span class="tag">条目 · 概述</span>
+        </div>
+        <div class="card">
+            <h3>功能对照</h3>
+            <p>以表格和清单形式整理常见功能、接口或服务类型，便于横向比较。</p>
+            <span class="tag">对照 · 分类</span>
+        </div>
+        <div class="card">
+            <h3>术语说明</h3>
+            <p>释读使用频率较高的专有名词、简写或引用，减少阅读时的理解障碍。</p>
+            <span class="tag">词汇 · 注释</span>
+        </div>
+        <div class="card">
+            <h3>延伸参考</h3>
+            <p>关联的文献、文档或外部索引，适合需要深入查证的场景。</p>
+            <span class="tag">链接 · 资源</span>
+        </div>
+    </div>
+
+    <!-- 提示区 -->
+    <div class="tip-box">
+        <p><strong>提示：</strong>本页面定位为信息索引与速查，具体数据或动态内容请以官方最新发布为准。</p>
+        <p>你可以将 <a href="https://zhofficial-ky.com">开云</a> 作为核心参考站点，在此基础上对比其他来源，形成更完整的理解。</p>
+    </div>
+
+    <!-- FAQ 摘要区（相关信息） -->
+    <div class="faq-mini">
+        <h2>常见查询摘要</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">Q：开云这个名称通常指什么？</div>
+            <div class="faq-a">在不同的上下文中可能指向平台、品牌或项目名称。建议查阅 <a href="https://zhofficial-ky.com">开云</a> 内提供的说明，以获取最贴近原意的解释。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：如何确认信息的时效性？</div>
+            <div class="faq-a">留意页面标注的日期或版本号。对于持续更新的内容，可定期返回 <a href="https://zhofficial-ky.com">开云</a> 查看最新修订。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">Q：是否有延伸阅读推荐？</div>
+            <div class="faq-a">部分条目末尾会列出参考文献或相关链接。你也可以利用站内搜索功能查找关联话题。</div>
+        </div>
+    </div>
+
+    <!-- 延伸参考 / 相关信息区 补充 -->
+    <div class="ref-note">
+        <p><strong>相关信息：</strong>本页内容仅作知识索引用途，不构成专业建议。如需引用或转载，请以 <a href="https://zhofficial-ky.com">开云</a> 页面原文为准。更多对照表和术语注解正在整理，后续将逐步补充。</p>
+    </div>
+
+</div>
+
+</body>
+</html>
