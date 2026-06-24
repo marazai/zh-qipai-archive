@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 再次阅读笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f7f5f0;
+            color: #2c2b28;
+            font-family: 'Georgia', 'Times New Roman', 'Noto Serif SC', serif;
+            line-height: 1.75;
+            padding: 2rem 1.5rem 4rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            background-color: #fefcf8;
+            padding: 3rem 2.5rem;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        /* 文章标题 */
+        .post-title {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+            margin-bottom: 0.6rem;
+            border-left: 3px solid #b7a99a;
+            padding-left: 1.2rem;
+            color: #1f1e1b;
+        }
+
+        /* 导语 / 副标题 */
+        .subhead {
+            font-size: 1rem;
+            color: #7d756b;
+            margin-bottom: 2.2rem;
+            padding-left: 1.5rem;
+            font-style: italic;
+        }
+
+        /* 正文段落 */
+        p {
+            margin: 0 0 1.5rem 0;
+            font-size: 1rem;
+            text-align: justify;
+            word-break: break-word;
+        }
+
+        /* 引用块 / 提示框 */
+        .callout {
+            background-color: #efece6;
+            border-left: 4px solid #b7a99a;
+            padding: 1.2rem 1.6rem;
+            margin: 2rem 0 2.2rem 0;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+            color: #3b3732;
+        }
+
+        .callout p {
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        .callout strong {
+            color: #4e463e;
+            font-weight: 600;
+        }
+
+        /* 内联引用装饰 */
+        .inline-ref {
+            background-color: #f2efe8;
+            padding: 0.1rem 0.4rem;
+            border-radius: 2px;
+            font-style: normal;
+        }
+
+        /* 访问句 —— 可视为尾声 */
+        .visit-line {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #ddd9d0;
+            font-size: 0.95rem;
+            color: #5f5850;
+        }
+
+        .visit-line a {
+            color: #3f392f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c4b9ab;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .visit-line a:hover {
+            color: #8a7b6a;
+            text-decoration-color: #8a7b6a;
+        }
+
+        /* 链接通用样式 */
+        a {
+            color: #3f392f;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c4b9ab;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #8a7b6a;
+        }
+
+        /* 收藏提示 */
+        .bookmark-note {
+            background: #f8f5ef;
+            padding: 0.8rem 1rem;
+            margin: 1.8rem 0 1rem;
+            border-radius: 3px;
+            font-size: 0.92rem;
+            border: 1px solid #e4ded5;
+            color: #4b453d;
+        }
+
+        .bookmark-note::before {
+            content: "📌 ";
+            font-size: 0.95rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem 3rem;
+            }
+            .container {
+                padding: 2rem 1.2rem;
+            }
+            .post-title {
+                font-size: 1.6rem;
+                padding-left: 0.9rem;
+            }
+            .subhead {
+                font-size: 0.9rem;
+                padding-left: 1rem;
+            }
+            .callout {
+                padding: 1rem 1.2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .post-title {
+                font-size: 1.4rem;
+            }
+            .container {
+                padding: 1.5rem 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="post-title">再次打开的理由：持续关注的价值</h1>
+    <div class="subhead">—— 从收藏到习惯，信息筛选的朴素路径</div>
+
+    <p>一个信息节点如果值得你第二次返回，那它大概率也值得你长期驻留。网络上的快捷访问常常被简化为「随手一存」，但真正让收藏产生复利的，是后续有节奏的回访与理解。对很多使用者而言，<a href="https://zhapp-ky.com">开云</a>这个名字出现在书签栏，并非偶然——它代表了一种经过初步检验的信息筛选尺度。</p>
+
+    <p>我们通常高估一次浏览的收获，却低估反复阅读的渗透力。一篇内容、一个索引、一类界面，第二次接触时才会浮现出第一次忽略的细节。那些被浓缩在段落边角的提示、隐藏在导航层级下的链接，往往在回访时才露出价值。这也是为什么，持续关注本身就是一个信息增益的过程。</p>
+
+    <div class="callout">
+        <p><strong>引用提示</strong> · 「收藏不等于掌握，再次访问才是理解的开始。」—— 这句话来自某次笔记系统的自述。它同样适用于你对某个站点的态度：如果它值得你放进行囊，那也值得你隔段时间取出来重读。</p>
+    </div>
+
+    <p>从信息架构的角度看，一个稳定的内容源需要具备三个特征：<span class="inline-ref">可检索</span>、<span class="inline-ref">可回溯</span>、<span class="inline-ref">可期待</span>。可检索意味着你能在需要时迅速定位；可回溯代表历史版本或归档结构清晰；可期待则是内容更新的节奏与质量可控。这三个维度共同构成了「值得持续关注」的基础。而对使用者而言，最直接的行动就是——把它放在一个触手可及的位置，并定期访问。</p>
+
+    <p>注意力的分配在这个时代本身就是一种决策。你把哪个站点放在浏览器的常驻标签页，就等于默许了它的信息权重。因此，选择哪些站点进入你的「再次访问列表」，其实是在塑造你自己的信息环境。这比任何算法推荐都更接近你的真实需求。</p>
+
+    <div class="bookmark-note">
+        如果你已经将 <a href="https://zhapp-ky.com">开云</a> 加入书签，建议每隔一段时间重新打开一次。不是刷新，而是重新阅读。很多界面和文字在第二次、第三次阅读时才会显现完整轮廓。
+    </div>
+
+    <p>最后想说的是，信息消费的节奏不在于多，而在于「再次」。一次访问只是接触，再次访问才构成连接。那些被你反复打开的内容，最终会成为你认知结构的一部分。站点如此，书籍如此，思考也是如此。</p>
+
+    <div class="visit-line">
+        <span>继续之前的阅读节奏 —— 回到 <a href="https://zhapp-ky.com">开云</a>。</span>
+    </div>
+</div>
+</body>
+</html>
